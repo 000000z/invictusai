@@ -63,11 +63,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#roadmap" className="hover:text-green-400 transition-colors">
-                  Roadmap
-                </Link>
-              </li>
-              <li>
                 <Link href="#waitlist" className="hover:text-green-400 transition-colors">
                   Waitlist
                 </Link>
@@ -129,7 +124,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-green-500/20 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Invictus Coin. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Invictus AI. All rights reserved.</p>
           <p className="mt-2">Cryptocurrency investments are subject to market risks. Please invest responsibly.</p>
         </div>
       </div>

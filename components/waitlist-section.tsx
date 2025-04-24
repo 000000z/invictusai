@@ -26,11 +26,12 @@ export default function WaitlistSection() {
   }
 
   return (
-    <section id="waitlist" className="py-20 relative">
+    <section id="waitlist" className="pt-10 pb-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-green-950/10 to-black z-0"></div>
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent z-0"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto bg-black/60 backdrop-blur-md border border-green-500/20 rounded-xl p-8 md:p-12">
+      <div className="container mx-auto px-4 relative z-20">
+        <div className="max-w-3xl mx-auto bg-black/80 backdrop-blur-md border border-green-500/20 rounded-xl p-8 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +41,7 @@ export default function WaitlistSection() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Waitlist</h2>
             <p className="text-xl text-gray-400">
-              Be among the first to access Invictus Coin and receive exclusive benefits.
+              Be among the first to access Invictus AI and receive exclusive benefits.
             </p>
           </motion.div>
 
@@ -104,7 +105,7 @@ export default function WaitlistSection() {
                   <p className="font-medium">Early Access</p>
                 </div>
                 <div className="p-4 bg-black/30 rounded-lg">
-                  <p className="font-medium">10% Bonus Tokens</p>
+                  <p className="font-medium">10% Bonus Credits</p>
                 </div>
                 <div className="p-4 bg-black/30 rounded-lg">
                   <p className="font-medium">Exclusive NFT</p>

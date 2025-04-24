@@ -27,17 +27,23 @@ export default function Navbar() {
           <Link href="#about" className="hover:text-green-400 transition-colors">
             About
           </Link>
-          <Link href="#roadmap" className="hover:text-green-400 transition-colors">
-            Roadmap
-          </Link>
           <Link href="#waitlist" className="hover:text-green-400 transition-colors">
             Waitlist
           </Link>
         </div>
 
         <div className="hidden md:block">
-          <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10">
-            Connect Wallet
+          <Button
+            variant="outline"
+            className="border-green-500 text-green-500 hover:bg-green-500/10"
+            onClick={() => {
+              const waitlistSection = document.getElementById("waitlist")
+              if (waitlistSection) {
+                waitlistSection.scrollIntoView({ behavior: "smooth" })
+              }
+            }}
+          >
+            Join Waitlist
           </Button>
         </div>
 
@@ -70,13 +76,6 @@ export default function Navbar() {
             About
           </Link>
           <Link
-            href="#roadmap"
-            className="text-xl hover:text-green-400 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Roadmap
-          </Link>
-          <Link
             href="#waitlist"
             className="text-xl hover:text-green-400 transition-colors"
             onClick={() => setIsMenuOpen(false)}
@@ -86,9 +85,15 @@ export default function Navbar() {
           <Button
             variant="outline"
             className="mt-4 border-green-500 text-green-500 hover:bg-green-500/10"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => {
+              setIsMenuOpen(false)
+              const waitlistSection = document.getElementById("waitlist")
+              if (waitlistSection) {
+                waitlistSection.scrollIntoView({ behavior: "smooth" })
+              }
+            }}
           >
-            Connect Wallet
+            Join Waitlist
           </Button>
         </div>
       </div>
