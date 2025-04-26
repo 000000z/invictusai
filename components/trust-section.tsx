@@ -6,8 +6,8 @@ import { Shield, Users, Award, TrendingUp } from "lucide-react"
 const stats = [
   {
     icon: <Users className="h-8 w-8 text-green-400" />,
-    value: "50,000+",
-    label: "Community Members",
+    value: "5000+",
+    label: "People in the Waitlist",
   },
   {
     icon: <Shield className="h-8 w-8 text-green-400" />,
