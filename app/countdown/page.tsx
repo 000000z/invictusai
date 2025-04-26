@@ -43,7 +43,7 @@ export default function CountdownPage() {
         </div>
       </main>
 
-      <Footer />
+      <Footer hideQuickLinks={true} />
     </div>
   )
 }

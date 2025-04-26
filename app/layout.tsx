@@ -8,7 +8,11 @@ export const metadata = {
   description:
     "The revolutionary platform that combines the power of artificial intelligence with blockchain technology to create unprecedented value.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/logo.webp", type: "image/webp" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+    apple: { url: "/logo.webp", type: "image/webp" },
   },
     generator: 'v0.dev'
 }
@@ -21,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/logo.webp" type="image/webp" sizes="any" />
+        <link rel="apple-touch-icon" href="/logo.webp" />
       </head>
       <body className="min-h-screen bg-black font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>

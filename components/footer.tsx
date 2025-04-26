@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Github, Twitter, DiscIcon as Discord, Linkedin } from "lucide-react"
+import { Github, Twitter } from "lucide-react"
 import Image from "next/image"
 
-export default function Footer() {
+interface FooterProps {
+  hideQuickLinks?: boolean
+}
+
+export default function Footer({ hideQuickLinks = false }: FooterProps) {
   return (
     <footer className="bg-black border-t border-green-500/20 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+        <div
+          className={`grid grid-cols-1 ${hideQuickLinks ? "md:grid-cols-2" : "md:grid-cols-3"} gap-8 mb-12 max-w-4xl mx-auto`}
+        >
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -28,15 +34,6 @@ export default function Footer() {
                   <Twitter className="h-4 w-4" />
                 </Button>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-8 w-8 text-gray-400 hover:text-white hover:bg-green-500/10"
-                >
-                  <Discord className="h-4 w-4" />
-                </Button>
-              </a>
               <a href="https://info.invictusai.io/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
@@ -46,43 +43,36 @@ export default function Footer() {
                   <Github className="h-4 w-4" />
                 </Button>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-8 w-8 text-gray-400 hover:text-white hover:bg-green-500/10"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-              </a>
             </div>
           </div>
 
-          <div className="text-center">
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link href="/" className="hover:text-green-400 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/#features" className="hover:text-green-400 transition-colors">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/#about" className="hover:text-green-400 transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/#waitlist" className="hover:text-green-400 transition-colors">
-                  Waitlist
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {!hideQuickLinks && (
+            <div className="text-center">
+              <h4 className="font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/" className="hover:text-green-400 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#features" className="hover:text-green-400 transition-colors">
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#about" className="hover:text-green-400 transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#waitlist" className="hover:text-green-400 transition-colors">
+                    Waitlist
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
 
           <div className="text-center">
             <h4 className="font-bold mb-4">Resources</h4>
