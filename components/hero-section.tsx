@@ -1,22 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Copy, CheckCircle } from "lucide-react"
-import { useState } from "react"
+import { ArrowRight, Github } from "lucide-react"
 import { motion } from "framer-motion"
 import InteractiveBackground from "./interactive-background"
 import Link from "next/link"
 
 export default function HeroSection() {
-  const [copied, setCopied] = useState(false)
-  const contractAddress = "0x1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t"
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(contractAddress)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   return (
     <section className="pt-28 pb-32 md:pt-40 md:pb-40 relative overflow-hidden">
       {/* Interactive background */}
@@ -63,15 +53,9 @@ export default function HeroSection() {
           >
             <div className="flex items-center justify-between">
               <div className="text-sm text-gray-400">Contract Address:</div>
-              <button
-                onClick={copyToClipboard}
-                className="flex items-center gap-1 text-green-400 hover:text-green-300 transition-colors"
-              >
-                {copied ? <CheckCircle size={16} /> : <Copy size={16} />}
-                {copied ? "Copied!" : "Copy"}
-              </button>
+              <div className="text-green-400 text-sm font-medium">Coming Soon</div>
             </div>
-            <div className="font-mono text-sm md:text-base text-gray-200 truncate mt-1">{contractAddress}</div>
+            <div className="font-mono text-sm md:text-base text-gray-400 mt-1 text-center">CA: pending...</div>
           </motion.div>
 
           <motion.div
@@ -85,9 +69,11 @@ export default function HeroSection() {
                 Try Invictus <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10">
-              View Whitepaper
-            </Button>
+            <a href="https://info.invictusai.io/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10">
+                View Docs <Github className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

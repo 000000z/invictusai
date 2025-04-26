@@ -91,9 +91,9 @@ export default function TrustSection() {
             <div className="aspect-video rounded-lg overflow-hidden border border-green-500/20 bg-black/80">
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Security visualization"
-                  className="w-full h-full object-cover opacity-70"
+                  src="/images/security-visualization.png"
+                  alt="Enterprise-grade security visualization"
+                  className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex items-center">
                   <div className="p-8">

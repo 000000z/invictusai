@@ -26,7 +26,7 @@ export default function WaitlistSection() {
   }
 
   return (
-    <section id="waitlist" className="pt-10 pb-20 relative">
+    <section id="waitlist" className="pt-10 pb-20 relative scroll-mt-20">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-green-950/10 to-black z-0"></div>
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent z-0"></div>
 
@@ -90,29 +90,6 @@ export default function WaitlistSection() {
               </p>
             </motion.form>
           )}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-8 pt-8 border-t border-green-500/20"
-          >
-            <div className="text-center">
-              <h4 className="font-bold mb-4">Waitlist Benefits</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 bg-black/30 rounded-lg">
-                  <p className="font-medium">Early Access</p>
-                </div>
-                <div className="p-4 bg-black/30 rounded-lg">
-                  <p className="font-medium">10% Bonus Credits</p>
-                </div>
-                <div className="p-4 bg-black/30 rounded-lg">
-                  <p className="font-medium">Exclusive NFT</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
