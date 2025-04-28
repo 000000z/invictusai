@@ -16,8 +16,14 @@ export default function Footer({ hideQuickLinks = false }: FooterProps) {
         >
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                <Image src="/logo.webp" alt="Invictus" width={16} height={16} />
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1">
+                <Image
+                  src="/logo-i.png"
+                  alt="Invictus"
+                  width={22}
+                  height={22}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-bold text-lg">Invictus</span>
             </Link>
@@ -25,7 +31,7 @@ export default function Footer({ hideQuickLinks = false }: FooterProps) {
               Merging AI and blockchain technology to revolutionize the crypto space.
             </p>
             <div className="flex gap-4 mt-4">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/AIinvictus" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
