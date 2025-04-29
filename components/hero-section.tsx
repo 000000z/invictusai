@@ -1,12 +1,26 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github } from "lucide-react"
+import { ArrowRight, Github, Copy, Check } from "lucide-react"
 import { motion } from "framer-motion"
 import InteractiveBackground from "./interactive-background"
 import Link from "next/link"
 
 export default function HeroSection() {
+  const [copied, setCopied] = useState(false)
+  const contractAddress = "CZAzE7hKQMBeQRbLdKGNatiBjRtMKNxDvzUh2u66pump"
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error("Failed to copy: ", err)
+    }
+  }
+
   return (
     <section className="pt-28 pb-32 md:pt-40 md:pb-40 relative overflow-hidden">
       {/* Interactive background */}
@@ -51,11 +65,40 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="w-full max-w-xl bg-black/80 backdrop-blur-sm border border-green-500/30 rounded-lg p-4 mb-8"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mb-2">
               <div className="text-sm text-gray-400">Contract Address:</div>
-              <div className="text-green-400 text-sm font-medium">Coming Soon</div>
+              <button
+                onClick={copyToClipboard}
+                className="flex items-center gap-1 text-green-400 text-sm font-medium hover:text-green-300 transition-colors"
+                aria-label="Copy contract address"
+              >
+                {copied ? (
+                  <>
+                    <Check className="h-4 w-4" /> Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-4 w-4" /> Copy
+                  </>
+                )}
+              </button>
             </div>
-            <div className="font-mono text-sm md:text-base text-gray-400 mt-1 text-center">CA: pending...</div>
+            <div
+              className="font-mono text-sm md:text-base text-gray-300 p-2 bg-black/50 rounded border border-green-500/20 flex items-center justify-between cursor-pointer"
+              onClick={copyToClipboard}
+            >
+              <span className="truncate">{contractAddress}</span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  copyToClipboard()
+                }}
+                className="ml-2 text-green-400 hover:text-green-300 transition-colors"
+                aria-label="Copy contract address"
+              >
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              </button>
+            </div>
           </motion.div>
 
           <motion.div
